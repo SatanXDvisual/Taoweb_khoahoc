@@ -239,6 +239,12 @@ body::after {
   width: 150px;
   left: -150px;
   animation-delay: 2s;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-blue),
+    transparent
+  );
 }
 
 .construction-line:nth-child(3) {
@@ -246,6 +252,94 @@ body::after {
   width: 180px;
   left: -180px;
   animation-delay: 4s;
+  background: var(--bim-green);
+  border-radius: 50%;
+  animation: dataFlow 4s linear infinite;
+}
+
+.construction-line:nth-child(4) {
+  top: 55%;
+  width: 220px;
+  left: -220px;
+  animation-delay: 6s;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--japan-red),
+    transparent
+  );
+}
+
+.construction-line:nth-child(5) {
+  top: 75%;
+  width: 170px;
+  left: -170px;
+  animation-delay: 8s;
+}
+
+.construction-line:nth-child(6) {
+  top: 15%;
+  width: 180px;
+  left: -180px;
+  animation-delay: 1s;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-blue),
+    transparent
+  );
+}
+
+.construction-line:nth-child(7) {
+  top: 35%;
+  width: 250px;
+  left: -250px;
+  animation-delay: 3s;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--bim-green),
+    transparent
+  );
+}
+
+.construction-line:nth-child(8) {
+  top: 85%;
+  width: 200px;
+  left: -200px;
+  animation-delay: 5s;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--japan-red),
+    transparent
+  );
+}
+
+.construction-line:nth-child(9) {
+  top: 95%;
+  width: 160px;
+  left: -160px;
+  animation-delay: 7s;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--secondary-blue),
+    transparent
+  );
+}
+
+.construction-line:nth-child(10) {
+  top: 5%;
+  width: 210px;
+  left: -210px;
+  animation-delay: 9s;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--light-blue),
+    transparent
+  );
 }
 
 /* Hiệu ứng BIM Data Flow */
