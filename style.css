@@ -1,0 +1,1424 @@
+/* Reset và Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-blue: #2563eb;
+  --secondary-blue: #3b82f6;
+  --light-blue: #60a5fa;
+  --white: #ffffff;
+  --light-gray: #f8fafc;
+  --dark-gray: #1e293b;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.15);
+  --japan-red: #dc2626;
+  --japan-red-light: #ef4444;
+  --bim-green: #059669;
+  --construction-orange: #ea580c;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: var(--dark-gray);
+  background: 
+    /* Nền chính màu trắng với gradient tinh tế */ linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f8fafc 30%,
+      #f1f5f9 70%,
+      #e2e8f0 100%
+    ),
+    /* Hiệu ứng grid công nghệ */
+      linear-gradient(rgba(37, 99, 235, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.02) 1px, transparent 1px),
+    /* Hiệu ứng BIM lines */
+      linear-gradient(
+        45deg,
+        transparent 49%,
+        rgba(5, 150, 105, 0.03) 50%,
+        transparent 51%
+      ),
+    /* Hiệu ứng Nhật Bản - hoa anh đào */
+      radial-gradient(
+        circle at 20% 80%,
+        rgba(220, 38, 38, 0.03) 0%,
+        transparent 50%
+      ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(220, 38, 38, 0.02) 0%,
+      transparent 50%
+    );
+  background-size: 100% 100%, 40px 40px, 40px 40px, 60px 60px, 200px 200px,
+    300px 300px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Hiệu ứng nền động mới - Công nghệ xây dựng Nhật Bản */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* BIM Grid System */ linear-gradient(
+      rgba(5, 150, 105, 0.02) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(5, 150, 105, 0.02) 1px, transparent 1px),
+    /* Construction Lines */
+      linear-gradient(
+        45deg,
+        transparent 49%,
+        rgba(234, 88, 12, 0.02) 50%,
+        transparent 51%
+      ),
+    /* Japanese Pattern */
+      radial-gradient(
+        circle at 50% 50%,
+        rgba(220, 38, 38, 0.01) 0%,
+        transparent 70%
+      );
+  background-size: 30px 30px, 30px 30px, 80px 80px, 150px 150px;
+  animation: constructionGrid 20s linear infinite;
+  z-index: -3;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* BIM Technology Pulse */ radial-gradient(
+      circle at 10% 10%,
+      rgba(5, 150, 105, 0.04) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(37, 99, 235, 0.03) 0%,
+      transparent 40%
+    ),
+    /* Japanese Cherry Blossom Effect */
+      radial-gradient(
+        circle at 30% 70%,
+        rgba(220, 38, 38, 0.02) 0%,
+        transparent 60%
+      );
+  z-index: -2;
+  animation: japanPulse 12s ease-in-out infinite;
+}
+
+/* Hiệu ứng BIM Building Elements */
+.bim-building-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bim-building {
+  position: absolute;
+  background: linear-gradient(
+    45deg,
+    rgba(5, 150, 105, 0.1),
+    rgba(37, 99, 235, 0.1)
+  );
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  animation: buildingRise 15s ease-in-out infinite;
+}
+
+.bim-building:nth-child(1) {
+  width: 80px;
+  height: 120px;
+  top: 60%;
+  left: 10%;
+  animation-delay: 0s;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.bim-building:nth-child(2) {
+  width: 60px;
+  height: 100px;
+  top: 70%;
+  right: 15%;
+  animation-delay: 3s;
+  clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
+}
+
+.bim-building:nth-child(3) {
+  width: 100px;
+  height: 80px;
+  top: 20%;
+  right: 30%;
+  animation-delay: 6s;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+}
+
+/* Hiệu ứng Cherry Blossom Nhật Bản */
+.cherry-blossom {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(
+    circle,
+    rgba(220, 38, 38, 0.3) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: cherryFall 8s linear infinite;
+}
+
+.cherry-blossom:nth-child(1) {
+  top: -20px;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.cherry-blossom:nth-child(2) {
+  top: -20px;
+  left: 30%;
+  animation-delay: 2s;
+}
+
+.cherry-blossom:nth-child(3) {
+  top: -20px;
+  left: 50%;
+  animation-delay: 4s;
+}
+
+.cherry-blossom:nth-child(4) {
+  top: -20px;
+  left: 70%;
+  animation-delay: 6s;
+}
+
+.cherry-blossom:nth-child(5) {
+  top: -20px;
+  left: 90%;
+  animation-delay: 1s;
+}
+
+/* Hiệu ứng Construction Lines */
+.construction-line {
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(234, 88, 12, 0.3),
+    transparent
+  );
+  height: 1px;
+  animation: constructionScan 6s linear infinite;
+}
+
+.construction-line:nth-child(1) {
+  top: 25%;
+  width: 200px;
+  left: -200px;
+  animation-delay: 0s;
+}
+
+.construction-line:nth-child(2) {
+  top: 45%;
+  width: 150px;
+  left: -150px;
+  animation-delay: 2s;
+}
+
+.construction-line:nth-child(3) {
+  top: 65%;
+  width: 180px;
+  left: -180px;
+  animation-delay: 4s;
+}
+
+/* Hiệu ứng BIM Data Flow */
+.bim-data-flow {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--bim-green);
+  border-radius: 50%;
+  animation: dataFlow 4s linear infinite;
+}
+
+.bim-data-flow:nth-child(1) {
+  top: 30%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.bim-data-flow:nth-child(2) {
+  top: 50%;
+  left: 40%;
+  animation-delay: 1s;
+}
+
+.bim-data-flow:nth-child(3) {
+  top: 70%;
+  left: 60%;
+  animation-delay: 2s;
+}
+
+.bim-data-flow:nth-child(4) {
+  top: 40%;
+  left: 80%;
+  animation-delay: 3s;
+}
+
+/* Animations mới */
+@keyframes constructionGrid {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(10px, 10px) rotate(0.2deg);
+  }
+  100% {
+    transform: translate(20px, 20px) rotate(0deg);
+  }
+}
+
+@keyframes japanPulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes buildingRise {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 0.6;
+  }
+}
+
+@keyframes cherryFall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes constructionScan {
+  0% {
+    left: -200px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes dataFlow {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1.2);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-40px) scale(1);
+  }
+  75% {
+    opacity: 0.4;
+    transform: translateY(-60px) scale(0.8);
+  }
+  100% {
+    transform: translateY(-80px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100px;
+    opacity: 1;
+  }
+}
+
+/* Background Animation - Công nghệ xây dựng Nhật Bản */
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* Cherry Blossom Container */
+.cherry-blossom-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Construction Lines Container */
+.construction-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* BIM Data Container */
+.bim-data-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.floating-shapes {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.shape {
+  position: absolute;
+  background: linear-gradient(45deg, var(--light-blue), var(--secondary-blue));
+  opacity: 0.12;
+  animation: float 20s infinite linear;
+  filter: blur(0.5px);
+}
+
+.shape-1 {
+  width: 150px;
+  height: 150px;
+  top: 5%;
+  left: 5%;
+  animation-delay: 0s;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.3));
+}
+
+.shape-2 {
+  width: 100px;
+  height: 100px;
+  top: 70%;
+  right: 10%;
+  animation-delay: -5s;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
+}
+
+.shape-3 {
+  width: 80px;
+  height: 80px;
+  top: 25%;
+  right: 25%;
+  animation-delay: -10s;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  filter: drop-shadow(0 0 6px rgba(96, 165, 250, 0.3));
+}
+
+.shape-4 {
+  width: 120px;
+  height: 120px;
+  bottom: 15%;
+  left: 15%;
+  animation-delay: -15s;
+  clip-path: polygon(
+    20% 0%,
+    80% 0%,
+    100% 20%,
+    100% 80%,
+    80% 100%,
+    20% 100%,
+    0% 80%,
+    0% 20%
+  );
+  filter: drop-shadow(0 0 12px rgba(37, 99, 235, 0.3));
+}
+
+.shape-5 {
+  width: 60px;
+  height: 60px;
+  top: 85%;
+  left: 70%;
+  animation-delay: -7s;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.3));
+}
+
+/* BIM Technology Elements */
+.bim-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bim-line {
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--light-blue),
+    transparent
+  );
+  height: 2px;
+  opacity: 0.2;
+  animation: bimLineMove 8s linear infinite;
+  filter: blur(0.5px);
+}
+
+.bim-line:nth-child(1) {
+  top: 20%;
+  width: 200px;
+  left: -200px;
+  animation-delay: 0s;
+}
+
+.bim-line:nth-child(2) {
+  top: 40%;
+  width: 150px;
+  left: -150px;
+  animation-delay: 2s;
+}
+
+.bim-line:nth-child(3) {
+  top: 60%;
+  width: 180px;
+  left: -180px;
+  animation-delay: 4s;
+}
+
+.bim-line:nth-child(4) {
+  top: 80%;
+  width: 120px;
+  left: -120px;
+  animation-delay: 6s;
+}
+
+@keyframes bimLineMove {
+  0% {
+    left: -200px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.15;
+  }
+  90% {
+    opacity: 0.15;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.08;
+  }
+  25% {
+    transform: translateY(-20px) rotate(90deg);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translateY(-40px) rotate(180deg);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translateY(-20px) rotate(270deg);
+    opacity: 0.12;
+  }
+}
+
+/* Glass Effect - Công nghệ Nhật Bản */
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(37, 99, 235, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), transparent),
+    linear-gradient(45deg, transparent, rgba(5, 150, 105, 0.05), transparent);
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.glass-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg) translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.glass-card:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12),
+    0 8px 20px rgba(37, 99, 235, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+.glass-card:hover::after {
+  transform: rotate(45deg) translateX(100%);
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.nav-logo i {
+  font-size: 2rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--dark-gray);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  color: var(--primary-blue);
+  background: rgba(37, 99, 235, 0.1);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.2), 0 4px 12px rgba(37, 99, 235, 0.1);
+  transform: translateY(-1px);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-blue);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 2rem 2rem;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--dark-gray);
+  text-shadow: 0 0 20px rgba(37, 99, 235, 0.3), 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.hero-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-blue),
+    var(--secondary-blue)
+  );
+  border-radius: 2px;
+  animation: slideIn 1s ease-out 0.5s both;
+}
+
+.highlight {
+  color: var(--primary-blue);
+  position: relative;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary-blue);
+  border-radius: 2px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue),
+    var(--secondary-blue)
+  );
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.revit-preview {
+  text-align: center;
+  padding: 3rem;
+}
+
+.revit-preview i {
+  font-size: 4rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.revit-preview span {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
+.bim-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.bim-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.bim-text {
+  font-size: 0.875rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 15px rgba(37, 99, 235, 0.2);
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Courses Section */
+.courses {
+  padding: 6rem 0;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.course-card {
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-card.featured {
+  border: 2px solid var(--primary-blue);
+  transform: scale(1.05);
+}
+
+.course-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.course-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue),
+    var(--secondary-blue)
+  );
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.course-icon:hover::before {
+  transform: translateX(100%);
+}
+
+.course-icon i {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.course-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--dark-gray);
+}
+
+.course-description {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.course-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+}
+
+.feature i {
+  color: var(--primary-blue);
+  width: 16px;
+}
+
+.course-price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.price-original {
+  font-size: 1rem;
+  color: #64748b;
+  text-decoration: line-through;
+}
+
+.course-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue),
+    var(--secondary-blue)
+  );
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.course-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+.course-button.featured {
+  background: linear-gradient(135deg, #059669, #10b981);
+}
+
+/* About Section */
+.about {
+  padding: 6rem 0;
+  background: rgba(248, 250, 252, 0.8);
+  position: relative;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 50%,
+      rgba(37, 99, 235, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(37, 99, 235, 0.05) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-features {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-feature {
+  display: flex;
+  gap: 1rem;
+}
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue),
+    var(--secondary-blue)
+  );
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-icon i {
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+.feature-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--dark-gray);
+}
+
+.feature-content p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item .stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  display: block;
+}
+
+.stat-item .stat-label {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+/* Contact Section */
+.contact {
+  padding: 6rem 0;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-description {
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #64748b;
+}
+
+.contact-item i {
+  color: var(--primary-blue);
+  width: 20px;
+}
+
+.contact-form {
+  padding: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue),
+    var(--secondary-blue)
+  );
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+/* Footer */
+.footer {
+  background: var(--dark-gray);
+  color: var(--white);
+  padding: 4rem 0 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-logo i {
+  color: var(--light-blue);
+}
+
+.footer-section h4 {
+  margin-bottom: 1rem;
+  color: var(--light-blue);
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: var(--light-blue);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  background: var(--glass-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #374151;
+  color: #9ca3af;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card.featured {
+    transform: none;
+  }
+
+  /* Ẩn một số hiệu ứng nền trên mobile để tối ưu hiệu suất */
+  .bim-building-elements,
+  .cherry-blossom-container,
+  .construction-lines,
+  .bim-data-container {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero {
+    padding: 100px 1rem 2rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
