@@ -670,9 +670,8 @@ body::after {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.85) !important;
+  background-color: rgba(255, 255, 255, 0.493) !important;
   border-bottom: 1px solid rgba(37, 99, 235, 0.15);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(37, 99, 235, 0.1);
 }
@@ -758,8 +757,9 @@ body::after {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: var(--dark-gray);
-  text-shadow: 0 0 20px rgba(37, 99, 235, 0.3), 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #e2e8f0;
+  text-shadow: 2px 2px 8px #000, 0 0 2px #fff, 0 0 20px rgba(37, 99, 235, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
@@ -797,9 +797,10 @@ body::after {
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: #64748b;
-  margin-bottom: 2rem;
-  line-height: 1.6;
+  color: #e2e8f0;
+  text-shadow: 2px 2px 8px #000, 0 0 2px #fff, 0 0 20px rgba(37, 99, 235, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .hero-stats {
@@ -816,12 +817,18 @@ body::after {
   display: block;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-blue);
+  color: #e2e8f0;
+  text-shadow: 2px 2px 8px #000, 0 0 2px #fff, 0 0 20px rgba(37, 99, 235, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .stat-label {
   font-size: 0.875rem;
-  color: #64748b;
+  color: #e2e8f0;
+  text-shadow: 2px 2px 8px #000, 0 0 2px #fff, 0 0 20px rgba(37, 99, 235, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .cta-button {
@@ -1421,4 +1428,40 @@ body::after {
   .section-title {
     font-size: 2rem;
   }
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(7px);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.hide-bg-animation {
+  display: none !important;
+}
+
+.hero .background-animation {
+  display: none !important;
 }
