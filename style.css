@@ -691,7 +691,9 @@ body::after {
   gap: 0.5rem;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary-blue);
+  color: #ffffff;
+  text-shadow: 2px 2px 8px #000, 0 0 2px #fff, 0 0 20px rgba(37, 99, 235, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-logo i {
@@ -706,7 +708,7 @@ body::after {
 .nav-link {
   text-decoration: none;
   color: var(--dark-gray);
-  font-weight: 500;
+  font-weight: 800;
   transition: all 0.3s ease;
   position: relative;
   padding: 0.5rem 1rem;
