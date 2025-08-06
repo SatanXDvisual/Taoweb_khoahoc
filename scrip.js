@@ -152,6 +152,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   courseButtons.forEach((button) => {
     button.addEventListener("click", function () {
+      // Only run the scroll logic if the element is a BUTTON
+      if (this.tagName !== 'BUTTON') {
+          return;
+      }
       const courseTitle =
         this.closest(".course-card").querySelector(".course-title").textContent;
 
