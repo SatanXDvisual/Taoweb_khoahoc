@@ -1098,10 +1098,6 @@ body::after {
   box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
 }
 
-.course-button.featured {
-  background: linear-gradient(135deg, #059669, #10b981);
-}
-
 /* About Section */
 .about {
   padding: 6rem 0;
