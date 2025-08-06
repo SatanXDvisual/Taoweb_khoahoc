@@ -707,6 +707,7 @@ body::after {
 
 .nav-link {
   text-decoration: none;
+  font-size: 20px;
   color: var(--dark-gray);
   font-weight: 800;
   transition: all 0.3s ease;
@@ -820,7 +821,7 @@ body::after {
   font-size: 2rem;
   font-weight: 700;
   color: #e2e8f0;
-  text-shadow: 2px 2px 8px #000, 0 0 2px #fff, 0 0 20px rgba(37, 99, 235, 0.3),
+  text-shadow: 2px 2px 4px #000, 0 0 2px #fff, 0 0 10px rgba(37, 99, 235, 0.3),
     0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
 }
@@ -828,7 +829,7 @@ body::after {
 .stat-label {
   font-size: 0.875rem;
   color: #e2e8f0;
-  text-shadow: 2px 2px 8px #000, 0 0 2px #fff, 0 0 20px rgba(37, 99, 235, 0.3),
+  text-shadow: 2px #000, 0 0 2px #fff, 0 0 20px rgba(37, 99, 235, 0.3),
     0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
 }
