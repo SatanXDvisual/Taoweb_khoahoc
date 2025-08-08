@@ -1051,9 +1051,35 @@ body::after {
 }
 
 .course-card {
-  padding: 2rem;
+  padding: 0;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.course-card:hover .course-image img {
+  transform: scale(1.05);
+}
+
+.course-content {
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .course-card.featured {
@@ -1063,14 +1089,15 @@ body::after {
 
 .course-badge {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: -1.5rem;
+  right: 2rem;
   background: var(--primary-blue);
   color: var(--white);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.875rem;
   font-weight: 600;
+  z-index: 1;
 }
 
 .course-icon {
@@ -1085,9 +1112,10 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
   position: relative;
   overflow: hidden;
+  align-self: center;
 }
 
 .course-icon::before {
@@ -1119,6 +1147,7 @@ body::after {
 .course-title {
   font-size: 1.5rem;
   font-weight: 600;
+  color: 0.5rem;
   margin-bottom: 1rem;
   color: var(--dark-gray);
 }
@@ -1185,6 +1214,7 @@ body::after {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  margin-top: auto;
 }
 
 .course-button:hover {
