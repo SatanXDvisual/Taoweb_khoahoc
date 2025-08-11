@@ -6,7 +6,7 @@
 }
 
 :root {
-  --primary-blue: #2563eb;
+  --primary-blue: hsl(221, 83%, 53%);
   --secondary-blue: #3b82f6;
   --light-blue: #60a5fa;
   --white: #ffffff;
@@ -1199,29 +1199,58 @@ body::after {
 }
 
 .course-button {
-  width: 100%;
-  padding: 1rem;
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue),
-    var(--secondary-blue)
-  );
-  color: var(--white);
+  background: hsl(221, 83%, 53%);
+  color: white;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
   border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  box-shadow: inset 0 0 1.6em -0.6em hsl(221, 68%, 64%);
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
   margin-top: auto;
 }
 
-.course-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+.course-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em hsl(221, 68%, 64%);
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.course-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.course-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: hsl(221, 68%, 64%);
+}
+
+.course-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.course-button:active .icon {
+  transform: scale(0.95);
 }
 
 /* About Section */
