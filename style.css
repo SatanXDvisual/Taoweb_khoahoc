@@ -841,12 +841,24 @@ body::after {
 }
 
 .hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 450px;
+  height: 1000px;
+  margin: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 4rem;
   align-items: center;
+}
+
+.hero-content {
+  margin-top: 50px;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 300px;
 }
 
 .hero-title {
@@ -949,12 +961,6 @@ body::after {
 .cta-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
-}
-
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .revit-preview {
