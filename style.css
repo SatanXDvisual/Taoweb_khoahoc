@@ -1036,7 +1036,7 @@ body::after {
   font-size: 1.125rem;
   color: #64748b;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* Courses Section */
