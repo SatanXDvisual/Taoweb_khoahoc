@@ -840,18 +840,35 @@ body::after {
   padding: 120px 2rem 2rem;
 }
 
-.hero-container {
-  max-width: 450px;
-  height: 1000px;
-  margin: 0;
+.hero .hero-container {
+  width: 1650px;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem;
+  grid-template-columns: 0.7fr 1fr;
+  gap: 3rem;
   align-items: center;
 }
 
+.hero-video-showcase {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  /* Bạn có thể thay đổi giá trị scale ở đây để điều chỉnh kích thước, ví dụ: scale(0.9) */
+  transform: scale(1.7);
+  transform-origin: center;
+  margin-left: 200px;
+  margin-right: 50px;
+  box-shadow: #10b981 0px 0px 20px 0px, rgba(16, 185, 129, 0.5) 0px 0px 20px 0px !important ;
+}
+
+.hero-video-showcase video {
+  width: 100%; /* Giữ chiều rộng 100% của container */
+  height: auto; /* Tự động điều chỉnh chiều cao để giữ tỉ lệ gốc */
+  object-fit: cover;
+}
+
 .hero-content {
-  margin-top: 50px;
+  margin-top: 0;
 }
 
 .hero-visual {
@@ -956,6 +973,7 @@ body::after {
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  margin-left: 0;
 }
 
 .cta-button:hover {
@@ -963,9 +981,15 @@ body::after {
   box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
 }
 
+.hero-content .glass-card {
+  max-width: 280px;
+  margin-left: 0rem;
+  margin-top: 3rem;
+}
+
 .revit-preview {
-  text-align: center;
-  padding: 3rem;
+  text-align: left;
+  padding: 1.5rem;
 }
 
 .revit-preview i {
