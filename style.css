@@ -998,6 +998,16 @@ body::after {
   margin-bottom: 1rem;
 }
 
+.revit-preview-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
+  animation: jump-and-sway 5s ease-in-out infinite;
+}
+
 .revit-preview span {
   font-size: 1.25rem;
   font-weight: 600;
@@ -1063,10 +1073,12 @@ body::after {
 }
 
 .section-subtitle {
+  margin-bottom: 1rem;
   font-size: 1.125rem;
   color: #64748b;
   max-width: 600px;
-  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Courses Section */
@@ -1726,4 +1738,20 @@ body::after {
 
 .hero .background-animation {
   display: none !important;
+}
+
+@keyframes jump-and-sway {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) translateX(10px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-15px) translateX(-10px) rotate(-5deg);
+  }
 }
