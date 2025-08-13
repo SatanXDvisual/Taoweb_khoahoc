@@ -45,6 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Animate numbers on scroll
   function animateNumbers() {
+    if (window.innerWidth <= 768) {
+      return;
+    }
     const numberElements = document.querySelectorAll(".stat-number");
 
     numberElements.forEach((element) => {
